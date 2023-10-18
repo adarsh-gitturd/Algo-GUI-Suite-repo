@@ -40,6 +40,7 @@ public class App {
 		buttons.add(new JButton("Bit Masking"));
 		buttons.add(new JButton("Big Integers"));
 		buttons.add(new JButton("Linear Reccurences and Matrix Exponentiation"));
+		buttons.add(new JButton("Linear Reccurences and Matrix Exponentiation"));
 		
 		for(int i = 0; i < buttons.size(); i++) {
 			buttons.get(i).setForeground(Color.BLUE);

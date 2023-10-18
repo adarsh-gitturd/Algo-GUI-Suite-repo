@@ -39,12 +39,13 @@ public class BitMasking {
 			b.setForeground(Color.RED);
 			b.setBackground(new Color(255, 138, 138));
 			b.setSize(new Dimension(140, 50));
-			if(i%3==0) {
-				b.setLocation(30, 150 + (i*60));				
+			if(i%4==0) {
+				b.setLocation(30, 150 + (i*30));				
 			}else {
 				b.setLocation(features.get(i-1).getX() + 150, features.get(i-1).getY());
 			}
 			b.addActionListener(new ButtonListener(app));
+			b.setVisible(true);
 			app.getFrame().add(b);
 		}
 	}
