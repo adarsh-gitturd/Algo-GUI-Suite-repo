@@ -50,9 +50,9 @@ public class BitMasking {
 				b.setLocation(features.get(i-1).getX() + 150, features.get(i-1).getY());
 			}
 			b.setVisible(true);
+			b.addActionListener(new BitMaskingBL(app));
 			app.getFrame().add(b);
 		}
-		features.get(0).addActionListener(new BitMaskingBL(app));
 	}
 	
 	public ArrayList<JButton> getButtons(){
@@ -74,10 +74,10 @@ public class BitMasking {
 			return "odd";
 		}
 
-		@Override
+		@Override	
 		public int getIthBit(int n, int i) {
-			// TODO Auto-generated method stub
-			return 0;
+			int mask = 1 << i;
+			return ((n & mask) == 1) ? 1 : 0;
 		}
 
 		@Override

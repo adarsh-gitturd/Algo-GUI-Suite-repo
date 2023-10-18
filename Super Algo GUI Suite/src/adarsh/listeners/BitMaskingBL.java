@@ -28,6 +28,14 @@ public class BitMaskingBL implements ActionListener{
 			ans = app.getMenuButtonListener().getBitMasking().bma.oddOrEven(Integer.parseInt(input));
 			JOptionPane.showMessageDialog(null, ans);
 		}
+		if(b == buttons.get(1)) {
+			String ans;
+			
+			JTextField input = JOptionPane.showInputDialog(null, "Enter a number : ");  
+			String inpust = JOptionPane.showInputDialog(null, "Enter an index : ");  
+			//ans = app.getMenuButtonListener().getBitMasking().bma.getIthBit(Integer.parseInt(input));
+			JOptionPane.showMessageDialog(null, "");
+		}
 	}
 	
 }
