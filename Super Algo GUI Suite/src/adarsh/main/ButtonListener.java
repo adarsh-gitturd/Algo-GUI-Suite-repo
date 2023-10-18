@@ -1,25 +1,30 @@
+package adarsh.main;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
 
+import adarsh.algorithms.BitMasking;
+
 public class ButtonListener implements ActionListener {
 	private App app;
-	private ArrayList<JButton> buttons;
+	private ArrayList<JButton> menuButtons;
 
 	public ButtonListener(App app) {
 		this.app = app;
-		buttons = app.getButtons();
+		menuButtons = app.getButtons();
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton b = (JButton) e.getSource();
-		if(b == buttons.get(0)) {
+		if(b == menuButtons.get(0)) {
 			app.setTitle("Bit Masking Algorithms");
-			for(JButton bb : buttons) {
+			for(JButton bb : menuButtons) {
 				bb.setVisible(false);
+				new BitMasking(app);
 			}
 		}
 	}

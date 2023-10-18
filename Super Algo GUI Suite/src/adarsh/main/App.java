@@ -1,3 +1,5 @@
+package adarsh.main;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -13,6 +15,7 @@ public class App {
 	
 	private JFrame frame;
 	private JLabel title;
+	
 	private ArrayList<JButton> buttons;
 	
 	public App(JFrame frame) {
@@ -62,5 +65,9 @@ public class App {
 	
 	public void setTitle(String text) {
 		title.setText(text);
+	}
+	
+	public JFrame getFrame() {
+		return frame;
 	}
 }
