@@ -6,14 +6,16 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 
+import adarsh.listeners.BitMaskingBL;
 import adarsh.main.App;
-import adarsh.main.ButtonListener;
 
 public class BitMasking {
 	private App app;
 	private ArrayList<JButton> features;
 	
-	public BitMasking(App app) {
+	public BitMasking() {}
+	
+	public void init(App app) {
 		this.app = app;
 		features = new ArrayList<JButton>();
 		initButtons();
@@ -44,9 +46,13 @@ public class BitMasking {
 			}else {
 				b.setLocation(features.get(i-1).getX() + 150, features.get(i-1).getY());
 			}
-			b.addActionListener(new ButtonListener(app));
 			b.setVisible(true);
 			app.getFrame().add(b);
 		}
+		features.get(0).addActionListener(new BitMaskingBL(app));
+	}
+	
+	public ArrayList<JButton> getButtons(){
+		return features;
 	}
 }

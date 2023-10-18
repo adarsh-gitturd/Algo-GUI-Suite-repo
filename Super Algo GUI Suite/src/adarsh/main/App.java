@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import adarsh.listeners.ButtonListener;
+
 public class App {
 	public static final int HEIGHT = 500;
 	public static final int WIDTH = 700;
@@ -17,6 +19,7 @@ public class App {
 	private JLabel title;
 	
 	private ArrayList<JButton> buttons;
+	private ButtonListener menuButtonListener;
 	
 	public App(JFrame frame) {
 		this.frame = frame;
@@ -31,6 +34,7 @@ public class App {
 		title.setBounds(250 + title.getWidth()/2, 0, 400, 80);
 //		title.setPreferredSize(new Dimension(903, 90));
 		title.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
+		menuButtonListener = new ButtonListener(this);
 		
 		addButtons();
 		frame.add(title);
@@ -51,7 +55,7 @@ public class App {
 			}else {
 				buttons.get(i).setLocation(buttons.get(i-1).getX() + 150, buttons.get(i-1).getY());
 			}
-			buttons.get(i).addActionListener(new ButtonListener(this));
+			buttons.get(i).addActionListener(menuButtonListener);
 			frame.add(buttons.get(i));
 		}
 	}
@@ -70,5 +74,9 @@ public class App {
 	
 	public JFrame getFrame() {
 		return frame;
+	}
+	
+	public ButtonListener getMenuButtonListener() {
+		return menuButtonListener;
 	}
 }
