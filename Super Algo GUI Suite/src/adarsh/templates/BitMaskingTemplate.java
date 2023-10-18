@@ -2,7 +2,7 @@ package adarsh.templates;
 
 import java.util.ArrayList;
 
-public interface BitMaskingInterface {
+public interface BitMaskingTemplate {
 	// helper functions
 	String oddOrEven(int n);
 	int getIthBit(int n, int i);

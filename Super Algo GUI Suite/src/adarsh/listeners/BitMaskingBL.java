@@ -16,13 +16,18 @@ public class BitMaskingBL implements ActionListener{
 	public BitMaskingBL(App app) {
 		this.app = app;
 		buttons = app.getMenuButtonListener().getBitMasking().getButtons();
+		
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton b = (JButton) e.getSource();
 		if(b == buttons.get(0)) {
-			 JOptionPane.showMessageDialog(app.getFrame(),"yoyo");  
+			String ans;
+			String input = JOptionPane.showInputDialog(null, "Enter a number : ");                         
+			ans = app.getMenuButtonListener().getBitMasking().bma.oddOrEven(Integer.parseInt(input));
+			JOptionPane.showMessageDialog(null, ans);
 		}
 	}
+	
 }
