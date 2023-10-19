@@ -1,5 +1,5 @@
 package adarsh.templates;
-
+                                                                                              
 import java.util.ArrayList;
 
 public interface BitMaskingTemplate {
